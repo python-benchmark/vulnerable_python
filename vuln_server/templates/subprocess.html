@@ -1,0 +1,14 @@
+{% extends "base_content.html" %}
+{% block title %}Subprocess{% endblock %}
+{% block content_title %}Python subprocess.call() bypass vulnerability{% endblock %}
+{% block content_description %}
+This site has a vulnerable backend application to unsaniticed python subprocess.call() attacks.<br><br>
+
+Retrive the contents from /root/flag file.<br><br>
+{% endblock %}
+{% block content_code%}
+subprocess.call("ping -c 1 " + input, shell=True)
+{% endblock %}
+
+{% set form_title = 'subprocess.call() bypass' %}
+{% set form_input_text = 'Insert eval expression.' %}

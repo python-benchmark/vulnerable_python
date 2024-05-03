@@ -1,0 +1,14 @@
+{% extends "base_content.html" %}
+{% block title %}Eval{% endblock %}
+{% block content_title %}Python eval() bypass vulnerability{% endblock %}
+{% block content_description %}
+This site has a vulnerable backend application to unsaniticed python eval() attacks.<br><br>
+
+Retrive the contents from /root/flag file.<br><br>
+{% endblock %}
+{% block content_code%}
+eval(input)
+{% endblock %}
+
+{% set form_title = 'Eval() bypass' %}
+{% set form_input_text = 'Insert eval expression.' %}

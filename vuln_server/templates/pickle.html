@@ -1,0 +1,18 @@
+{% extends "base_content.html" %}
+{% block title %}Pickle{% endblock %}
+{% block content_title %}Python Pickle loads vulnerability{% endblock %}
+{% block content_description %}
+This site has a vulnerable backend application to Pickle deseralization attacks.<br><br>
+
+Choose whether you want to use a manually crafted pickle object or an already base 64 encoded object.<br>
+Retrive the contents from /root/flag file.<br><br>
+{% endblock %}
+{% block content_code%}
+prick = base64.b64decode(input_data.decode())
+pickle.loads(prick)
+{% endblock %}
+
+{% set form_title = 'Upload pickle data base64 encoded input value or a data object file' %}
+{% set form_input_text = 'Pickle data input text (base64).' %}
+{% set input_text_size = '50' %}
+{% set form_input_file = 'Pickle data object file' %}

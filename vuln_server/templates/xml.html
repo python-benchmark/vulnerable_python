@@ -1,0 +1,16 @@
+{% extends "base_content.html" %}
+{% block title %}XML{% endblock %}
+{% block content_title %}Python XML Xternal Entity injection (XXE) vulnerability{% endblock %}
+{% block content_description %}
+This site has a vulnerable backend application to XML XXE deseralization attacks.<br><br>
+
+Retrive the contents from /root/flag file.<br><br>
+{% endblock %}
+{% block content_code%}
+doc = parse(filename)
+for event, node in doc:
+    doc.expandNode(node)
+{% endblock %}
+
+{% set form_title = 'XML Entity Injection' %}
+{% set form_input_text = 'Paste XML' %}
