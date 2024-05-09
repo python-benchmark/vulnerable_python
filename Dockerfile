@@ -1,4 +1,4 @@
-FROM python:3-slim
+FROM python:3.13.0b1-slim
 
 WORKDIR /vuln_server
 ADD requirements.txt requirements.txt
